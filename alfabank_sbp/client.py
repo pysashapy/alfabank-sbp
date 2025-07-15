@@ -10,7 +10,6 @@ from cryptography.hazmat.primitives.asymmetric import padding
 
 from alfabank_sbp.exceptions import AlfaBankSBPClientError
 
-# Настройка логирования
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -252,7 +251,7 @@ class AlfaBankSBPClient:
             "amount": str(amount) if amount is not None else None,
             "currency": currency,
             "messageID": message_id,
-            "ReturnRestAmount":  str(return_rest_amount).lower() if return_rest_amount is not None else None,
+            "ReturnRestAmount": str(return_rest_amount).lower() if return_rest_amount is not None else None,
             "queryData": {"notificationUrl": notification_url}
         }
         return self._send_request(self._build_request_data("QRCreversal", params))
