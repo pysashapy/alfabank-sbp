@@ -8,7 +8,7 @@ import requests
 from cryptography.hazmat.primitives import serialization, hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 
-from alfabank_sbp.exceptions import AlfaBankSBPClientError
+from alfabank.exceptions import AlfaBankSBPClientError
 
 logging.basicConfig(
     level=logging.INFO,
