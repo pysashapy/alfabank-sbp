@@ -3,7 +3,7 @@ name = "alfabank"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "white",email = "sasha.2000ubr@gmail.com"}
+    {name = "white",email = "sasha.2000ibr@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.11"

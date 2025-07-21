@@ -38,7 +38,7 @@ class AlfaBankSBPClient:
             term_no: str,
             cert_path: str,
             key_path: str,
-            ca_path: str,
+            ca_path: str | bool,
             signing_cert_path: str,
             signing_key_path: str,
             cert_alias: str
@@ -60,7 +60,7 @@ class AlfaBankSBPClient:
         self.cert_alias = cert_alias
         self.session = requests.Session()
         self.session.cert = (cert_path, key_path)
-        self.session.verify = False
+        self.session.verify = ca_path
         self.signing_key_path = signing_key_path
         self._private_key = self._load_private_key()
 
