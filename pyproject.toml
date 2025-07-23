@@ -1,6 +1,6 @@
 [project]
 name = "alfabank"
-version = "0.1.0"
+version = "0.1.1a1"
 description = ""
 authors = [
     {name = "white",email = "sasha.2000ibr@gmail.com"}

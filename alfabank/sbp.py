@@ -95,7 +95,8 @@ class AlfaBankSBPClient:
         response.raise_for_status()
         result = response.json()
         if result.get("ErrorCode") != 0:
-            raise AlfaBankSBPClientError(result.get("ErrorCode"), result.get("message", "Неизвестная ошибка"))
+            message = result.get("message", None).replace('%u', '\\u').encode().decode('unicode_escape') or "Неизвестная ошибка"
+            raise AlfaBankSBPClientError(result.get("ErrorCode"), message)
         return result
 
     def get_qr_code(
